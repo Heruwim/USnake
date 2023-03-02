@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1166115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166117}
+  - component: {fileID: 1166116}
+  m_Layer: 0
+  m_Name: GridArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1166116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 46, y: 22}
+  m_EdgeRadius: 0
+--- !u!4 &1166117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &452926979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1524745434546832381, guid: 6c29b5407ffc199458fa369ef751c136, type: 3}
+  m_PrefabInstance: {fileID: 1461696504415847443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &452926983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452926979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cb1bd7a0813fb4f8c9982bce523145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridArea: {fileID: 1166116}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8951b9d1fd93bef4ea17958eb18e19d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _segmentPrefab: {fileID: 17015542825322188, guid: 8e49c9358f9648048ad66cf400aa8663, type: 3}
 --- !u!1001 &1461696504415847443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -677,6 +754,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1524745434546832381, guid: 6c29b5407ffc199458fa369ef751c136, type: 3}
       propertyPath: m_Name
+      value: Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524745434546832381, guid: 6c29b5407ffc199458fa369ef751c136, type: 3}
+      propertyPath: m_TagString
       value: Food
       objectReference: {fileID: 0}
     - target: {fileID: 3383123551881365987, guid: 6c29b5407ffc199458fa369ef751c136, type: 3}
@@ -779,6 +860,10 @@ PrefabInstance:
     - target: {fileID: 9093886767851589311, guid: 9fb5b4f03ab11374e986d8592278c980, type: 3}
       propertyPath: m_Name
       value: Snake
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093886767851589311, guid: 9fb5b4f03ab11374e986d8592278c980, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb5b4f03ab11374e986d8592278c980, type: 3}

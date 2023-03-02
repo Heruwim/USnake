@@ -11,7 +11,7 @@ public class Food : MonoBehaviour
 
     private void RandomaizePosition()
     {
-        Bounds bounds = _gridArea.bounds;
+        Bounds bounds = this._gridArea.bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x); 
         float y = Random.Range(bounds.min.y, bounds.max.y);
         
