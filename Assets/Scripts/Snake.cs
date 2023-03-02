@@ -4,34 +4,38 @@ using UnityEngine;
 public class Snake : MonoBehaviour
 {
     [SerializeField] private Transform _segmentPrefab;
+    [SerializeField] private int _initialSize = 3;
     
     
     private Vector2 _direction = Vector2.right;
-    private List<Transform> _segments;
+    private List<Transform> _segments = new List<Transform>();
 
     private void Start()
     {
-        _segments = new List<Transform>();
-        _segments.Add(this.transform);
+        ResetState();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            _direction = Vector2.up;
+            if(_direction != Vector2.down)
+                _direction = Vector2.up;
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            _direction = Vector2.down;
+            if (_direction != Vector2.up)
+                _direction = Vector2.down;
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            _direction = Vector2.left;
+            if (_direction != Vector2.right)
+                _direction = Vector2.left;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            _direction = Vector2.right;
+            if (_direction != Vector2.left)
+                _direction = Vector2.right;
         }
     }
 
@@ -57,9 +61,29 @@ public class Snake : MonoBehaviour
         _segments.Add(segment);
     }
 
+    private void ResetState()
+    {
+        for(int i = 1; i < _segments.Count; i++)
+        {
+            Destroy(_segments[i].gameObject);
+        }
+
+        _segments.Clear();
+        _segments.Add(this.transform);
+
+        for(int i = 1; i < _initialSize; i++)
+        {
+            _segments.Add(Instantiate(_segmentPrefab));
+        }
+
+        this.transform.position = Vector3.zero;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == ("Food"))
             Grow();
+        else if (other.tag == ("Obstacle"))
+            ResetState();
     }
 }
